@@ -1,0 +1,57 @@
+
+
+	.data
+val1:	1983
+val2:	2007
+
+	.text
+	
+li $13, 65
+li $15, 70
+li $9, 75
+
+
+
+label1:
+addi $13, $13, 5
+
+
+
+beq $13, $15, label1
+
+add $17, $14, $15
+
+#beq $14, $9, end
+
+lw $20, val1
+
+sw $14, val1
+bne $9, 75, label1
+
+jal func
+end:
+ori $8, $9, 31
+
+li $10, 87
+addi $9, $9, 6
+
+bne $9, $10, end
+
+j trueEnd
+
+
+
+#function
+func:
+	addi $11, $11, 12
+	jr $ra
+
+
+
+trueEnd:
+	li $9, 10
+labelbeq:
+	addi $9, $9, 5
+	beq $9, 15, labelbeq
+	
+	
